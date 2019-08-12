@@ -1,0 +1,168 @@
+<!doctype html>
+<html class="" lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<title>Glocal</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css" />
+		<link rel="stylesheet" href="css/jquery-selectbox.css" />
+		<link rel="stylesheet" href="css/responsive-grid.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<link id="theme-color" rel="stylesheet" href="css/green.css" />
+		<link rel="stylesheet" href="css/header-1.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
+
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="css/styles-ie8-and-down.css" />
+		<![endif]-->
+
+	</head>
+
+	<body>
+
+		<header class="section">
+
+			<div class="header-wrapper">
+				<div class="zone-header zone clearfix">
+
+					<div class="header-left container-6">
+
+						<div class="logo block">
+							<a href="index.html">
+								<img src="images/logo.png" alt="" />
+							</a>
+						</div>
+
+					</div>
+
+				</div><!-- end of .zone-header -->
+			</div><!-- end of .header-wrapper -->
+
+
+		</header>
+
+		<section class="section content">
+
+			<div class="search-wrapper clearfix">
+				<div class="zone-search zone clearfix">
+
+					<div class="search-container container-24">
+
+						<div class="search block">
+							<form id="default-search" class="default-search clearfix" action="/" method="post">
+								<input type="text" id="search-where" class="text-input-black input-text" name="poi" placeholder="You preferable location" />
+								<input type="submit" class="submit" value="search" name="submit" />
+							</form>
+						</div>
+
+					</div>
+
+				</div><!-- end of .zone-search -->
+			</div><!-- end of .search-wrapper -->
+
+			<div class="map-wrapper">
+				<div id="map" class="map" style="position: relative; overflow: hidden;">
+				</div>
+
+				<div class="hide-map-control">
+					<a href="#" id="hide-map-button" class="hide-map-button map-expanded">Hide Map</a>
+				</div>
+
+			</div><!-- end of .map-wrapper -->
+
+			<div class="content-wrapper">
+				<div class="zone-content equalize zone clearfix">
+
+					<div class="content-container container-16" style="min-height: 2364px;">
+					<div class="blog block">
+					{{range .poiEvents}}
+					<div class="blog-post-preview">
+						<div class="blog-post-preview-left">
+							<div class="blog-post-date">
+								<div class="day">{{.Day}}</div>
+								<div class="month">{{.Month}}</div>
+								<div class="year">{{.Year}}</div>
+							</div>
+						</div>
+						<div class="blog-post-preview-right">
+                                                	<div class="blog-post-image">
+                                                        	<img src="images/content/sunglasses.jpg" alt="" />
+                                                      	</div>
+							<div class="blog-post-description clearfix">
+								<div class="blog-post-title-comments">
+									<a href="#" class="blog-post-title">{{.Event}}</a>
+								</div>
+								<div class="blog-post-excerpt">
+								{{.Event}}
+								</div>
+							</div>
+						</div>
+                                        </div>
+					{{end}}
+
+				</div>
+			</div><!-- end of .content-container -->
+
+					<div class="sidebar-container container-8">
+
+						<div class="recently-added block">
+							<div class="block-title">
+								<h3>Recently Added</h3>
+							</div>
+							<ul class="entries-list">
+								{{range .events}}
+								<li class="clearfix">
+									<a href="#" class="entry-title">{{.PoiName}} {{.Date}}</a>
+									<div class="entry-excerpt">{{.Event}}</div>
+								</li>
+								{{end}}
+							</ul>
+						</div>
+
+					</div><!-- end of .sidebar-container -->
+
+				</div><!-- end of .zone-content -->
+			</div><!-- end of .content-wrapper -->
+
+			<div class="interlayer"></div>
+
+		</section>
+
+		<footer class="section">
+
+			<div class="copyright-wrapper">
+				<div class="zone-copyright zone clearfix">
+
+					<div class="copyright-left-container container-12">
+
+						<div class="copyright block">&copy; All Rights Reserved. Design by www.uou.ch.</div>
+
+					</div>
+
+
+				</div><!-- end of .zone-copyright -->
+			</div><!-- end of .copyright-wrapper -->
+
+		</footer>
+
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyC_ZPhZhmRueUJZg4fMwZbfN_NNcR64Mic"></script>
+		<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.gomap-1.3.2.min.js"></script>
+		<script type="text/javascript" src="scripts/map.js"></script>
+		<script type="text/javascript" src="scripts/jquery.selectbox-0.6.1.js"></script>
+		<script type="text/javascript" src="scripts/jquery.tweet.js"></script>
+		<script type="text/javascript" src="scripts/jflickrfeed.min.js"></script>
+		<script type="text/javascript" src="scripts/superfish.js"></script>
+		<script type="text/javascript" src="scripts/jquery.mobilemenu.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.placeholder.min.js"></script>
+		<script type="text/javascript" src="scripts/scripts.js"></script>
+
+	</body>
+
+</html>

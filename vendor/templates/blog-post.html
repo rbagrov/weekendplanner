@@ -1,0 +1,549 @@
+<!doctype html>
+<html class="" lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<title>Glocal</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css" />
+		<link rel="stylesheet" href="css/jquery-selectbox.css" />
+		<link rel="stylesheet" href="css/responsive-grid.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<link id="theme-color" rel="stylesheet" href="css/green.css" />
+		<link rel="stylesheet" href="css/header-1.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
+
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="css/styles-ie8-and-down.css" />
+		<![endif]-->
+
+	</head>
+
+	<body>
+
+		<div id="theme-switcher" class="theme-switcher">
+			<div id="switcher-toggle-button" class="switcher-toggle-button"></div>
+			<div class="label">Colors:</div>
+			<ul id="color-switcher" class="color-switcher">
+				<li class="green"></li>
+				<li class="red"></li>
+				<li class="blue"></li>
+				<li class="grey"></li>
+				<li class="violet"></li>
+				<li class="orange"></li>
+			</ul>
+			<div class="label">Layout:</div>
+			<select id="layout-switcher" class="layout-switcher" name="layout-switcher">
+				<option selected="" value="fullscreen">Fullscreen</option>
+				<option value="boxed">Boxed</option>
+			</select>
+			<div class="label">Background:</div>
+			<ul id="background-switcher" class="background-switcher">
+				<li class="background-1"></li>
+				<li class="background-2"></li>
+				<li class="background-3"></li>
+			</ul>
+		</div>
+
+		<header class="section">
+
+			<div class="header-top-wrapper">
+				<div class="zone-header-top zone clearfix">
+
+					<div class="header-top-left container-8">
+
+						<div class="user-links">
+							<div class="login">
+								<a href="#" id="login-link" class="login-link">Login</a>
+								<form id="login-form" class="login-form">
+									<input class="text-input-grey" type="text" placeholder="Login">
+									<input class="text-input-grey" type="text" placeholder="Password">
+									<a href="#" class="password-restore">Forgot Password?</a>
+									<input class="button-2-colorful" type="submit" value="Login">
+								</form>
+							</div>
+							<div class="register">
+								<a href="#" id="register-link" class="register-link">Register</a>
+								<form id="register-form" class="register-form">
+									<input class="text-input-grey" type="text" placeholder="Login">
+									<input class="text-input-grey" type="text" placeholder="Company Name">
+									<input class="text-input-grey" type="text" placeholder="Contact Person Name">
+									<input class="text-input-grey" type="text" placeholder="E-mail">
+									<input class="text-input-grey" type="text" placeholder="Password">
+									<input class="text-input-grey" type="text" placeholder="Repeat Password">
+									<div href="#" class="fields-required">All Fields Are Required</div>
+									<input class="button-2-colorful" type="submit" value="Register">
+								</form>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="header-top-right container-16">
+
+						<div class="social-links block">
+							<a href="http://www.facebook.com">
+								<img src="images/facebook-icon.png" alt=""/>
+							</a>
+							<a href="http://www.google.com">
+								<img src="images/google-icon.png" alt="" />
+							</a>
+							<a href="http://www.twitter.com">
+								<img src="images/twitter-icon.png" alt="" />
+							</a>
+							<a href="http://www.linkedin.com">
+								<img src="images/linkedin-icon.png" alt="" />
+							</a>
+							<a href="http://www.pinterest.com">
+								<img src="images/pinterest-icon.png" alt="" />
+							</a>
+							<a href="http://www.dribbble.com">
+								<img src="images/dribbble-icon.png" alt="" />
+							</a>
+						</div>
+
+						<div class="languages block">
+							<a href="#" class="en current">EN</a>
+							<a href="#" class="fr">FR</a>
+							<a href="#" class="it">IT</a>
+							<a href="#" class="de">DE</a>
+						</div>
+
+					</div>
+
+				</div><!-- end of .zone-header-top -->
+			</div><!-- end of .header-top-wrapper -->
+
+			<div class="header-wrapper">
+				<div class="zone-header zone clearfix">
+
+					<div class="header-left container-6">
+
+						<div class="logo block">
+							<a href="index.html">
+								<img src="images/logo.png" alt="" />
+							</a>
+						</div>
+
+					</div>
+
+					<div class="header-right container-18">
+
+						<div class="adverisement block">
+							<a href="http://themeforest.net/">
+								<img src="images/content/banner.jpg" alt="" />
+							</a>
+						</div>
+
+					</div>
+
+				</div><!-- end of .zone-header -->
+			</div><!-- end of .header-wrapper -->
+
+			<div class="main-menu-wrapper">
+				<div class="zone-main-menu zone clearfix">
+
+					<div class="main-menu-container container-24">
+
+						<div class="main-menu block">
+							<ul id="sf-menu">
+								<li class="empty">
+									<div></div>
+								</li>
+								<li class="first">
+									<a href="index.html">HOME</a>
+									<ul>
+										<li class="first">
+											<a href="index-street-view.html">Home (Street View)</a>
+										</li>
+										<li class="">
+											<a href="index-slideshow.html">Home (Slideshow)</a>
+										</li>
+										<li class="">
+											<a href="index-header2.html">Home (Header 2)</a>
+										</li>
+										<li class="">
+											<a href="index-header3.html">Home (Header 3)</a>
+										</li>
+										<li class="">
+											<a href="index-header4.html">Home (Header 4)</a>
+										</li>
+										<li class="">
+											<a href="index-header5.html">Home (Header 5)</a>
+										</li>
+										<li class="">
+											<a href="index-header6.html">Home (Header 6)</a>
+										</li>
+										<li class="last">
+											<a href="index-header7.html">Home (Header 7)</a>
+										</li>
+									</ul>
+								</li>
+								<li class="">
+									<a href="companies-listing.html">FEATURES</a>
+									<ul>
+										<li class="first">
+											<a href="companies-listing.html">Companies Listing</a>
+										</li>
+										<li class="">
+											<a href="shortcodes.html">Shortcodes</a>
+										</li>
+										<li class="">
+											<a href="company-page.html">Company Page</a>
+										</li>
+										<li class="">
+											<a href="company-page-2.html">Company Page 2</a>
+										</li>
+										<li class="">
+											<a href="company-page-3.html">Company Page (Complex Ratings)</a>
+										</li>
+										<li class="">
+											<a href="company-tabs.html">Company Page (With Tabs)</a>
+										</li>
+										<li class="">
+											<a href="single-project.html">Single Project</a>
+										</li>
+										<li class="">
+											<a href="portfolio-1.html">Portfolio (1 column)</a>
+										</li>
+										<li class="">
+											<a href="portfolio-2.html">Portfolio (2 columns)</a>
+										</li>
+										<li class="">
+											<a href="portfolio-3.html">Portfolio (3 columns)</a>
+										</li>
+										<li class="last">
+											<a href="portfolio-4.html">Portfolio (4 columns)</a>
+										</li>
+									</ul>
+								</li>
+								<li class="">
+									<a href="about-us.html">ABOUT US</a>
+								</li>
+								<li class="neighbour-left">
+									<a href="price-register.html">SUBMIT LISTING</a>
+								</li>
+								<li class="active">
+									<a href="blog.html">BLOG</a>
+									<ul>
+										<li class="first last">
+											<a href="blog-post.html">Blog post</a>
+										</li>
+									</ul>
+								</li>
+								<li class="neighbour-right">
+									<a href="contact-us.php">CONTACT US</a>
+								</li>
+								<li class="last">
+									<a href="index.html">PURCHASE THIS THEME</a>
+								</li>
+								<li class="empty">
+									<div></div>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+				</div><!-- end of .zone-main-menu -->
+			</div><!-- end of .main-menu-wrapper -->
+
+		</header>
+
+		<section class="section content">
+
+			<div class="content-wrapper">
+				<div class="zone-content equalize zone clearfix">
+
+					<div class="content-container container-16">
+
+						<div class="blog-post block">
+							<div class="block-title">
+								<h1>Post Title Goes Here</h1>
+							</div>
+							<div class="blog-post-image">
+								<img src="images/content/nest.jpg" alt="" />
+							</div>
+							<div class="blog-post-subtitle">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.
+							</div>
+							<div class="blog-post-body">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.</p>
+								<p>Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.</p>
+							</div>
+							<div class="blog-post-info">
+								<div class="social-links">
+									<a href="http://www.facebook.com">
+										<img src="images/facebook-icon.png" alt=""/>
+									</a>
+									<a href="http://www.google.com">
+										<img src="images/google-icon.png" alt="" />
+									</a>
+									<a href="http://www.twitter.com">
+										<img src="images/twitter-icon.png" alt="" />
+									</a>
+									<a href="http://www.linkedin.com">
+										<img src="images/linkedin-icon.png" alt="" />
+									</a>
+									<a href="http://www.pinterest.com">
+										<img src="images/pinterest-icon.png" alt="" />
+									</a>
+									<a href="http://www.dribbble.com">
+										<img src="images/dribbble-icon.png" alt="" />
+									</a>
+								</div>
+								<div class="blog-post-author text-colorful">Admin</div>
+								<div class="blog-post-category text-colorful">Uncategorized</div>
+							</div>
+						</div>
+
+						<div class="comments block">
+							<div class="block-title">
+								<h3>2 comments</h3>
+							</div>
+							<div class="comments-tree">
+								<div class="comment">
+									<div class="user-picture">
+										<img src="images/content/crayons.png" alt="" />
+									</div>
+									<div class="comment-body">
+										<div class="comment-author">
+											<span class="author">Admin</span> - <span class="date">April 10, 2013 at 7:34 pm</span> - <a href="#" class="reply-link text-colorful">Reply</a>
+										</div>
+										<div class="comment-text">
+											Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi.
+										</div>
+									</div>
+								</div>
+								<div class="comment reply">
+									<div class="user-picture">
+										<img src="images/content/crayons.png" alt="" />
+									</div>
+									<div class="comment-body">
+										<div class="comment-author">
+											<span class="author">Admin</span> - <span class="date">April 10, 2013 at 7:34 pm</span> - <a href="#" class="reply-link text-colorful">Reply</a>
+										</div>
+										<div class="comment-text">
+											Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="comment-message">
+								<div class="comment-message-title">
+									Leave a <span class="text-colorful">Comment</span>
+								</div>
+								<form class="comment-message-form">
+									<input type="text" class="text-input-grey name" placeholder="Name *" />
+									<input type="text" class="text-input-grey email" placeholder="Email *" />
+									<input type="text" class="text-input-grey website" placeholder="Website" />
+									<textarea class="text-input-grey comment-message-main" placeholder="Your Comments Here"></textarea>
+									<input type="submit" class="button-2-colorful" value="Post Comment" name="comment" />
+								</form>
+							</div>
+						</div>
+
+					</div><!-- end of .content-container -->
+
+					<div class="sidebar-container container-8">
+
+						<div class="sidebar-search block">
+							<form id="sidebar-search">
+								<input type="text" class="sidebar-search-input" placeholder="Search...">
+								<input type="submit" class="sidebar-search-submit" name="submit" value="" />
+							</form>
+						</div>
+
+						<div class="categories block">
+							<div class="block-title">
+								<h3>Categories</h3>
+							</div>
+							<ul>
+								<li>
+									<a href="#">Lorem ipsum dolor sit amet</a>
+								</li>
+								<li>
+									<a href="#">Consectetur adipisicing elit</a>
+								</li>
+								<li>
+									<a href="#">Proin nibh augue suscipit</a>
+								</li>
+								<li>
+									<a href="#">Scelerisque sed, lacinia in</a>
+								</li>
+								<li>
+									<a href="#">Cras vel lorem</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="recently-added block">
+							<div class="block-title">
+								<h3>Recently Added</h3>
+							</div>
+							<ul class="entries-list">
+								<li class="clearfix">
+									<a href="#" class="thumbnail">
+										<img src="images/content/sky.png" alt="" />
+									</a>
+									<a href="#" class="entry-title">Company Name</a>
+									<div class="entry-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+								</li>
+								<li class="clearfix">
+									<a href="#" class="thumbnail">
+										<img src="images/content/text.png" alt="" />
+									</a>
+									<a href="#" class="entry-title">Another Company</a>
+									<div class="entry-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+								</li>
+							</ul>
+							<div class="two-images-banner clearfix">
+								<a href="#">
+									<img src="images/content/crayons.png" alt="" />
+								</a>
+								<a href="#">
+									<img src="images/content/coins.png" alt="" />
+								</a>
+							</div>
+						</div>
+
+						<div class="latest-news block">
+							<div class="block-title">
+								<h3>Latest News</h3>
+							</div>
+							<ul class="entries-list">
+								<li class="clearfix">
+									<a href="#" class="thumbnail">
+										<img src="images/content/coins.png" alt="" />
+									</a>
+									<a href="#" class="entry-title">Lorem Ipsum</a>
+									<div class="entry-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+								</li>
+								<li class="clearfix">
+									<a href="#" class="thumbnail">
+										<img src="images/content/crayons.png" alt="" />
+									</a>
+									<a href="#" class="entry-title">Dolor Sit Amet</a>
+									<div class="entry-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+								</li>
+							</ul>
+							<div class="one-image-banner">
+								<a href="#">
+									<img src="images/content/handshake.png" alt="" />
+								</a>
+							</div>
+						</div>
+
+					</div><!-- end of .sidebar-container -->
+
+				</div><!-- end of .zone-content -->
+			</div><!-- end of .content-wrapper -->
+
+		</section>
+
+		<footer class="section">
+
+			<div class="footer-wrapper">
+				<div class="zone-footer zone clearfix">
+
+					<div class="footer-container container-24">
+
+						<div class="website-short-description block">
+							<img src="images/logo-small.png" class="logo" alt="" />
+							<div class="description-text">
+								Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis.
+							</div>
+						</div>
+
+						<div class="twitter-feed block">
+							<h3 class="title">Recent Tweets</h3>
+							<div id="twitter-feed"></div>
+						</div>
+
+						<div class="recent-posts block">
+							<h3 class="title">Recent Posts</h3>
+							<ul>
+								<li class="first">
+									<a href="#" class="text-colorful">Lorem ipsum dolor sit amet</a>
+								</li>
+								<li>
+									<a href="#" class="text-colorful">Proin nibh augue suscipit</a>
+								</li>
+								<li>
+									<a href="#" class="text-colorful">Cras vel lorem</a>
+								</li>
+								<li class="last">
+									<a href="#" class="text-colorful">Quisque semper justo at risus</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="flickr-feed block">
+							<h3 class="title">Flickr Feed</h3>
+							<div id="flickr-feed"></div>
+						</div>
+
+					</div>
+
+				</div><!-- end of .zone-footer -->
+			</div><!-- end of .footer-wrapper -->
+
+			<div class="copyright-wrapper">
+				<div class="zone-copyright zone clearfix">
+
+					<div class="copyright-left-container container-12">
+
+						<div class="copyright block">&copy; All Rights Reserved. Design by www.uou.ch.</div>
+
+					</div>
+
+					<div class="copyright-right-container container-12">
+
+						<div class="social-links block">
+							<a href="http://www.facebook.com">
+								<img src="images/facebook-icon.png" alt="" />
+							</a>
+							<a href="http://www.google.com">
+								<img src="images/google-icon.png" alt="" />
+							</a>
+							<a href="http://www.twitter.com">
+								<img src="images/twitter-icon.png" alt="" />
+							</a>
+							<a href="http://www.linkedin.com">
+								<img src="images/linkedin-icon.png" alt="" />
+							</a>
+							<a href="http://www.pinterest.com">
+								<img src="images/pinterest-icon.png" alt="" />
+							</a>
+							<a href="http://www.dribbble.com">
+								<img src="images/dribbble-icon.png" alt="" />
+							</a>
+						</div>
+
+					</div>
+
+				</div><!-- end of .zone-copyright -->
+			</div><!-- end of .copyright-wrapper -->
+
+		</footer>
+
+		<div id="boxed-switch" class="boxed-switch">SWITCH TO BOXED VERSION</div>
+
+		<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.selectbox-0.6.1.js"></script>
+		<script type="text/javascript" src="scripts/jquery.tweet.js"></script>
+		<script type="text/javascript" src="scripts/jflickrfeed.min.js"></script>
+		<script type="text/javascript" src="scripts/superfish.js"></script>
+		<script type="text/javascript" src="scripts/jquery.mobilemenu.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.placeholder.min.js"></script>
+		<script type="text/javascript" src="scripts/scripts.js"></script>
+
+	</body>
+
+</html>
