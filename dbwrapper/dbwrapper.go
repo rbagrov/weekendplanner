@@ -56,7 +56,7 @@ func DBGetPOI(poi string, db *sql.DB) []helpers.GenericPOIEvent {
 	var eventsList []helpers.GenericPOIEvent
 	var event helpers.GenericPOIEvent
 	var ScanDate time.Time
-	sqlStatement := "SELECT date, event, poi_name FROM events WHERE date >= $1 AND poi_name = $2 ORDER BY date ASC;"
+	sqlStatement := "SELECT date, event, poi_name FROM events WHERE date = $1 AND poi_name = $2 ORDER BY date ASC;"
 	rows, err := db.Query(sqlStatement, time.Now(), poi)
 	helpers.SQLCheckErr(err)
 	defer rows.Close()
