@@ -9,7 +9,7 @@ import (
 	time "time"
 )
 
-// DSN constructor data
+// DSN constructor data ToDo read from env and fall back to default values
 const (
 	DbUser     = "postgres"
 	DbPassword = "postgres"
