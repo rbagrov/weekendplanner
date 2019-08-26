@@ -115,7 +115,7 @@ func DBGetLastEvents(db *sql.DB) []helpers.GenericEvent {
 	var eventsList []helpers.GenericEvent
 	var event helpers.GenericEvent
 	var ScanDate time.Time
-	sqlStatement := "SELECT date, event, poi_name FROM events ORDER BY created_on DESC LIMIT 5;"
+	sqlStatement := "SELECT events.date, events.event_title, poi.name FROM events JOIN poi ON (events.poi_id = poi.id) ORDER BY events.created_on DESC LIMIT 5;"
 	rows, err := db.Query(sqlStatement)
 	helpers.SQLCheckErr(err)
 	defer rows.Close()
