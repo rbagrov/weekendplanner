@@ -32,22 +32,62 @@ func DBClose(db *sql.DB) {
 	db.Close()
 }
 
-// EventExists : check if event exists
-func EventExists(date string, title string, poiName string, db *sql.DB) bool {
+// DBEventExists : check if event exists
+func DBEventExists(date string, title string, poiName string, db *sql.DB) bool {
 	var exists bool
 	var query string
-	query = fmt.Sprintf("SELECT exists(SELECT id FROM events WHERE date = '%s' and event = '%s' and poi_name = '%s')", date, title, poiName)
+	query = fmt.Sprintf("SELECT exists(SELECT id FROM events JOIN poi ON(events.poi_id = poi.id) WHERE events.date = '%s' and events.event_title = '%s' and poi.name = '%s')", date, title, poiName)
 	err := db.QueryRow(query).Scan(&exists)
 	helpers.SQLCheckErr(err)
 	return exists
 }
 
-// DBInsert : increments persistence
-func DBInsert(date string, title string, poiName string, db *sql.DB) {
-	stmt, err := db.Prepare("INSERT INTO events(created_on, updated_on, date, event, poi_name) VALUES($1,$2,$3,$4, $5)")
+// DBPOIExists : check if poi exists
+func DBPOIExists(poiName string, db *sql.DB) bool {
+	var exists bool
+	var query string
+	query = fmt.Sprintf("SELECT exists(SELECT id FROM poi WHERE name = '%s')", poiName)
+	err := db.QueryRow(query).Scan(&exists)
+	helpers.SQLCheckErr(err)
+	return exists
+}
+
+// DBGetPOIId : returns POI id
+func DBGetPOIId(poiName string, db *sql.DB) helpers.POI {
+	statement := "SELECT id FROM poi WHERE name = $1"
+	rows, err := db.Query(statement, poiName)
+	helpers.SQLCheckErr(err)
+	defer rows.Close()
+
+	var poi helpers.POI
+
+	for rows.Next() {
+		err := rows.Scan(&poi.ID)
+		helpers.CheckErr(err)
+	}
+	return poi
+}
+
+// DBPOIAdd : adds POI
+func DBPOIAdd(poiName string, db *sql.DB) {
+	stmt, err := db.Prepare("INSERT INTO poi(created_on, updated_on, name) VALUES($1, $2, $3)")
 	helpers.SQLCheckErr(err)
 
-	_, err1 := stmt.Exec(time.Now(), time.Now(), date, title, poiName)
+	_, err1 := stmt.Exec(time.Now(), time.Now(), poiName)
+	helpers.SQLCheckErr(err1)
+}
+
+// DBAddEvent : increments persistence
+func DBAddEvent(date string, title string, poiName string, db *sql.DB) {
+	if !DBPOIExists(poiName, db) {
+		DBPOIAdd(poiName, db)
+	}
+
+	poi := DBGetPOIId(poiName, db)
+	stmt, err := db.Prepare("INSERT INTO events(created_on, updated_on, date, event_title, poi_id) VALUES($1,$2,$3,$4,$5)")
+	helpers.SQLCheckErr(err)
+
+	_, err1 := stmt.Exec(time.Now(), time.Now(), date, title, poi.ID)
 	helpers.SQLCheckErr(err1)
 }
 

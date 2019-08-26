@@ -8,6 +8,11 @@ import (
 	time "time"
 )
 
+// POI struct
+type POI struct {
+	ID int
+}
+
 // GenericScraperEvent struct used in scrapers
 type GenericScraperEvent struct {
 	Date  time.Time
