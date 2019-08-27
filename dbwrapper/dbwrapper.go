@@ -96,7 +96,7 @@ func DBGetPOI(poi string, db *sql.DB) []helpers.GenericPOIEvent {
 	var eventsList []helpers.GenericPOIEvent
 	var event helpers.GenericPOIEvent
 	var ScanDate time.Time
-	sqlStatement := "SELECT date, event, poi_name FROM events WHERE date = $1 AND poi_name LIKE '%' || $2 || '%' ORDER BY date ASC;"
+	sqlStatement := "SELECT events.date, events.event_title, poi.name FROM events JOIN poi ON (events.poi_id = poi.id) WHERE events.date = $1 AND poi.name LIKE '%' || $2 || '%' ORDER BY events.date ASC;"
 	rows, err := db.Query(sqlStatement, time.Now(), poi)
 	helpers.SQLCheckErr(err)
 	defer rows.Close()
