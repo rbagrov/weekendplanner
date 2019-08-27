@@ -50,8 +50,8 @@ func VelikoTurnovo(db *sql.DB) {
 
 				dateString := fmt.Sprintf("%v/%v/%v", date.Year(), int(date.Month()), date.Day())
 
-				if !dbwrapper.EventExists(dateString, event.Title, POIName, db) {
-					dbwrapper.DBInsert(dateString, event.Title, POIName, db)
+				if !dbwrapper.DBEventExists(dateString, event.Title, POIName, db) {
+					dbwrapper.DBAddEvent(dateString, event.Title, POIName, db)
 				}
 
 			}

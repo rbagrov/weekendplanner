@@ -36,3 +36,7 @@
 [[constraint]]
   branch = "master"
   name = "googlemaps.github.io/maps"
+
+[[constraint]]
+  name = "github.com/golang-migrate/migrate"
+  version = "3.5.4"

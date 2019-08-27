@@ -6,6 +6,7 @@ import (
 	BalchikScraper "github.com/weekendplanner/scraper/Balchik"
 	BeloslavScraper "github.com/weekendplanner/scraper/Beloslav"
 	RuseScraper "github.com/weekendplanner/scraper/Ruse"
+	VelikoTurnovoScraper "github.com/weekendplanner/scraper/VelikoTurnovo"
 )
 
 var db *sql.DB
@@ -17,4 +18,5 @@ func main() {
 	BeloslavScraper.Beloslav(db)
 	RuseScraper.Ruse(db)
 	BalchikScraper.Balchik(db)
+	VelikoTurnovoScraper.VelikoTurnovo(db)
 }

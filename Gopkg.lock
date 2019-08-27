@@ -32,6 +32,12 @@
   version = "v1.4.0"
 
 [[projects]]
+  name = "github.com/golang-migrate/migrate"
+  packages = [".","database","source"]
+  revision = "4937cd088f7c7193ee59b319c1c2caa7482aae8e"
+  version = "v3.5.4"
+
+[[projects]]
   name = "github.com/golang/protobuf"
   packages = ["proto"]
   revision = "6c65a5562fc06764971b7c5d05c76c75e84bdbf7"
@@ -100,6 +106,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "ab3a5d7d9c31a50f5ee02a3a893d59ebc07645f38376f179d2e05a4c9f09b295"
+  inputs-digest = "c64abd3ee18023414f9bb6abb1b329cf18fefdd156dfe6bd6eb723994b335b7a"
   solver-name = "gps-cdcl"
   solver-version = 1

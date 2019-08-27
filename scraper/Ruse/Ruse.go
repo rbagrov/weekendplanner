@@ -40,8 +40,8 @@ func Ruse(db *sql.DB) {
 		if err == nil {
 			event.Title = strings.TrimSpace(s.Find(".news_title").Text())
 
-			if !dbwrapper.EventExists(dateFixed, event.Title, POIName, db) {
-				dbwrapper.DBInsert(dateFixed, event.Title, POIName, db)
+			if !dbwrapper.DBEventExists(dateFixed, event.Title, POIName, db) {
+				dbwrapper.DBAddEvent(dateFixed, event.Title, POIName, db)
 			}
 		} else {
 			helpers.CheckErrNonFatal(err)
