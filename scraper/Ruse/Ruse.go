@@ -13,8 +13,10 @@ import (
 
 // URL for specific town
 const (
-	RuseURL = "http://free-spirit-city.eu/aktualno-za-sedmicata"
-	POIName = "Ruse"
+	RuseURL   = "http://free-spirit-city.eu/aktualno-za-sedmicata"
+	POIName   = "Ruse"
+	Longitude = "25.955231"
+	Latitude  = "43.849579"
 )
 
 // Ruse : Scraper specific
@@ -29,6 +31,7 @@ func Ruse(db *sql.DB) {
 	helpers.CheckErr(err)
 
 	var event helpers.GenericScraperEvent
+	var poi helpers.POIInit
 
 	doc.Find(".photos_common .news_box").Each(func(i int, s *goquery.Selection) {
 		split := strings.Split(strings.TrimSpace(s.Find(".news_date_list").Text()), ".")
@@ -39,9 +42,12 @@ func Ruse(db *sql.DB) {
 		event.Date, err = dateparse.ParseAny(dateFixed)
 		if err == nil {
 			event.Title = strings.TrimSpace(s.Find(".news_title").Text())
+			poi.Name = POIName
+			poi.Latitude = Latitude
+			poi.Longitude = Longitude
 
-			if !dbwrapper.DBEventExists(dateFixed, event.Title, POIName, db) {
-				dbwrapper.DBAddEvent(dateFixed, event.Title, POIName, db)
+			if !dbwrapper.DBEventExists(dateFixed, event.Title, poi.Name, db) {
+				dbwrapper.DBAddEvent(dateFixed, event.Title, poi, db)
 			}
 		} else {
 			helpers.CheckErrNonFatal(err)

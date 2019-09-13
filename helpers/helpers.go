@@ -8,6 +8,13 @@ import (
 	time "time"
 )
 
+// POIInit struct
+type POIInit struct {
+	Name      string
+	Latitude  string
+	Longitude string
+}
+
 // POI struct
 type POI struct {
 	ID int
