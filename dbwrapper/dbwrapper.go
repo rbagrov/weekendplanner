@@ -69,25 +69,36 @@ func DBGetPOIId(poiName string, db *sql.DB) helpers.POI {
 }
 
 // DBPOIAdd : adds POI
-func DBPOIAdd(poiName string, db *sql.DB) {
+func DBPOIAdd(poi helpers.POIInit, db *sql.DB) {
 	stmt, err := db.Prepare("INSERT INTO poi(created_on, updated_on, name) VALUES($1, $2, $3)")
 	helpers.SQLCheckErr(err)
 
-	_, err1 := stmt.Exec(time.Now(), time.Now(), poiName)
+	_, err1 := stmt.Exec(time.Now(), time.Now(), poi.Name)
+	helpers.SQLCheckErr(err1)
+
+	DBAddPoint(poi, db)
+}
+
+// DBAddPoint : add POI Point
+func DBAddPoint(poi helpers.POIInit, db *sql.DB) {
+	stmt, err := db.Prepare("UPDATE poi SET long_lat = ST_SetSRID(ST_MakePoint($1,$2),4326) WHERE name = $3;")
+	helpers.SQLCheckErr(err)
+
+	_, err1 := stmt.Exec(poi.Longitude, poi.Latitude, poi.Name)
 	helpers.SQLCheckErr(err1)
 }
 
 // DBAddEvent : increments persistence
-func DBAddEvent(date string, title string, poiName string, db *sql.DB) {
-	if !DBPOIExists(poiName, db) {
-		DBPOIAdd(poiName, db)
+func DBAddEvent(date string, title string, poi helpers.POIInit, db *sql.DB) {
+	if !DBPOIExists(poi.Name, db) {
+		DBPOIAdd(poi, db)
 	}
 
-	poi := DBGetPOIId(poiName, db)
+	IDpoi := DBGetPOIId(poi.Name, db)
 	stmt, err := db.Prepare("INSERT INTO events(created_on, updated_on, date, event_title, poi_id) VALUES($1,$2,$3,$4,$5)")
 	helpers.SQLCheckErr(err)
 
-	_, err1 := stmt.Exec(time.Now(), time.Now(), date, title, poi.ID)
+	_, err1 := stmt.Exec(time.Now(), time.Now(), date, title, IDpoi.ID)
 	helpers.SQLCheckErr(err1)
 }
 

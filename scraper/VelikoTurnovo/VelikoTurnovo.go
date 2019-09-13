@@ -15,7 +15,9 @@ import (
 
 // URL for specific town
 const (
-	POIName = "VelikoTurnovo"
+	POIName   = "VelikoTurnovo"
+	Longitude = "25.627159"
+	Latitude  = "43.078560"
 )
 
 // VelikoTurnovo : Scraper specific
@@ -31,6 +33,11 @@ func VelikoTurnovo(db *sql.DB) {
 	helpers.CheckErr(err)
 
 	var event helpers.GenericScraperEvent
+	var poi helpers.POIInit
+
+	poi.Name = POIName
+	poi.Latitude = Latitude
+	poi.Longitude = Longitude
 
 	doc.Find(".news-list .events").Each(func(i int, s *goquery.Selection) {
 		bothDates := strings.TrimSpace(s.Find(".events-info-date").Text())
@@ -50,8 +57,8 @@ func VelikoTurnovo(db *sql.DB) {
 
 				dateString := fmt.Sprintf("%v/%v/%v", date.Year(), int(date.Month()), date.Day())
 
-				if !dbwrapper.DBEventExists(dateString, event.Title, POIName, db) {
-					dbwrapper.DBAddEvent(dateString, event.Title, POIName, db)
+				if !dbwrapper.DBEventExists(dateString, event.Title, poi.Name, db) {
+					dbwrapper.DBAddEvent(dateString, event.Title, poi, db)
 				}
 
 			}
