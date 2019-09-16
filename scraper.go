@@ -15,8 +15,8 @@ var db *sql.DB
 func main() {
 	db := dbwrapper.DBOpen()
 	defer dbwrapper.DBClose(db)
-	BeloslavScraper.Beloslav(db)
-	RuseScraper.Ruse(db)
-	BalchikScraper.Balchik(db)
-	VelikoTurnovoScraper.VelikoTurnovo(db)
+	go BeloslavScraper.Beloslav(db)
+	go RuseScraper.Ruse(db)
+	go BalchikScraper.Balchik(db)
+	go VelikoTurnovoScraper.VelikoTurnovo(db)
 }
